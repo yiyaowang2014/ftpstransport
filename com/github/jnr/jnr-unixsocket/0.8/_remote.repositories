@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 22:13:41 CDT 2016
+jnr-unixsocket-0.8.jar>=
+jnr-unixsocket-0.8.pom>=

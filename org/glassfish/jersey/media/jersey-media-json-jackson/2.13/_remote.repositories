@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 21:54:04 CDT 2016
+jersey-media-json-jackson-2.13.jar>mule-codehaus=
+jersey-media-json-jackson-2.13.jar>=
+jersey-media-json-jackson-2.13.pom>mule-codehaus=

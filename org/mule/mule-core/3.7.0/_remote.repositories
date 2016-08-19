@@ -1,0 +1,9 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 21:54:02 CDT 2016
+mule-core-3.7.0-tests.jar>=
+mule-core-3.7.0.jar>mulesoft-releases=
+mule-core-3.7.0.jar>mulesoft-plugin-releases=
+mule-core-3.7.0.pom>mulesoft-releases=
+mule-core-3.7.0-tests.jar>mulesoft-releases=
+mule-core-3.7.0.pom>mulesoft-plugin-releases=
+mule-core-3.7.0.jar>=

@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 22:41:41 CDT 2016
+xstream-1.4.7.jar>mule-codehaus=
+xstream-1.4.7.pom>mule=
+xstream-1.4.7.pom>mule-codehaus=
+xstream-1.4.7.jar>=

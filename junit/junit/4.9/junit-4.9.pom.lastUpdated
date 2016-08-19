@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:39:16 CDT 2016
+http\://dist.codehaus.org/mule/dependencies/maven2/.lastUpdated=1471581556450
+http\://repository.muleforge.org/.error=Could not transfer artifact junit\:junit\:pom\:4.9 from/to muleforge-repo (http\://repository.muleforge.org)\: Connect to repository.muleforge.org\:80 [repository.muleforge.org/199.119.127.133] failed\: Connection timed out\: connect
+http\://dist.codehaus.org/mule/dependencies/maven2/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1471581556541
+@default-muleforge-repo-http\://repository.muleforge.org/.lastUpdated=1471581556290

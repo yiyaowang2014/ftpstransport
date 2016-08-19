@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mulesoft.muleesb</groupId>
+        <artifactId>muleesb</artifactId>
+        <version>3.8.0</version>
+    </parent>
+    <groupId>com.mulesoft.muleesb.tests</groupId>
+    <artifactId>mule-tests</artifactId>
+    <packaging>pom</packaging>
+    <name>Mule EE Tests</name>
+    <description>Mule EE Tests</description>
+
+    <properties>
+        <skipTests>${skipIntegrationTests}</skipTests>
+
+        <!-- <destDir> referenced below in <reportOutputDirectory> but not being used -->
+        <destDir>apidocs</destDir>
+        <!-- <redirectTestOutputToFile> used in maven-surefire-plugin -->
+        <redirectTestOutputToFile>true</redirectTestOutputToFile>
+
+        <skipQAIntegrationTests>true</skipQAIntegrationTests>
+        <skipReliabilityTests>true</skipReliabilityTests>
+    </properties>
+
+    <modules>
+        <module>cache</module>
+        <module>domain</module>
+        <module>integration</module>
+        <module>multi-tx</module>
+        <module>reliability</module>
+        <module>xa-tx</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${apacheHttpMimeVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>fluent-hc</artifactId>
+                <version>${apacheHttpFluentVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${apacheHttpCoreVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-servlet_3.0_spec</artifactId>
+                <version>${geronimoSpecsServletApiVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jms_1.1_spec</artifactId>
+                <version>${geronimoSpecsJmsVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derby</artifactId>
+                <version>${derbyVersion}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mulesoft.muleesb</groupId>
+            <artifactId>mule-core-ee</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-core</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+            <version>${xalanVersion}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>-Xmx512m -XX:MaxPermSize=128m</argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>system</id>
+            <modules>
+                <module>system</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>qa-integration</id>
+            <activation>
+                <property>
+                    <name>integration</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <defaultGoal>verify</defaultGoal>
+            </build>
+            <properties>
+                <skipQAIntegrationTests>false</skipQAIntegrationTests>
+            </properties>
+        </profile>
+        <profile>
+            <id>qa-reliability</id>
+            <activation>
+                <property>
+                    <name>reliability</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <defaultGoal>verify</defaultGoal>
+            </build>
+            <properties>
+                <skipReliabilityTests>false</skipReliabilityTests>
+            </properties>
+        </profile>
+    </profiles>
+</project>

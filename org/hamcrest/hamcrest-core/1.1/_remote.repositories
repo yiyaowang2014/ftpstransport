@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:24:43 CDT 2016
+hamcrest-core-1.1.pom>central=
+hamcrest-core-1.1.jar>=
+hamcrest-core-1.1.pom>mule-plugin=
+hamcrest-core-1.1.pom>mule-codehaus=
+hamcrest-core-1.1.jar>mule-codehaus=

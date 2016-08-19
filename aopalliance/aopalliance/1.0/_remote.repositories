@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:24:40 CDT 2016
+aopalliance-1.0.pom>central=
+aopalliance-1.0.pom>mule-codehaus=
+aopalliance-1.0.jar>mule-codehaus=
+aopalliance-1.0.pom>mule=
+aopalliance-1.0.jar>=

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mulesoft.anypoint</groupId>
+        <artifactId>api-gateway-modules</artifactId>
+        <version>3.8.0</version>
+    </parent>
+
+    <artifactId>mule-module-wsdl-el-gw</artifactId>
+    <packaging>jar</packaging>
+    <name>API Gateway WSDL Expression Language Additions</name>
+
+    <properties>
+        <skipExportTests>false</skipExportTests>
+        <licensePath>../../LICENSE_HEADER.txt</licensePath>
+        <json.simple.version>1.1</json.simple.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>gateway-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+            <version>${wsdl4jVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>mule-module-spring-config-gw</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>${json.simple.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-cxf</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Unit tests -->
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>mule-module-test-utils-gw</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <classifier>indy</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 21:54:03 CDT 2016
+connector-testing-framework-serializers-1.0.2.jar>mulesoft-releases=
+connector-testing-framework-serializers-1.0.2.pom>mulesoft-releases=
+connector-testing-framework-serializers-1.0.2.jar>=

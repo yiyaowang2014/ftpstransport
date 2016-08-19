@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mulesoft.muleesb.transports</groupId>
+        <artifactId>mule-transports</artifactId>
+        <version>3.8.0</version>
+    </parent>
+    <artifactId>mule-transport-ftp-ee</artifactId>
+    <packaging>jar</packaging>
+    <name>Premium FTP Transport</name>
+    <description>Extensions to the FTP transport only available as part of Mule Enterprise</description>
+
+    <properties>
+        <skipExportTests>false</skipExportTests>
+    </properties>
+
+
+    <build>
+         <plugins>
+             <!-- create a defined directory that's used by the unit tests -->
+             <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <mkdir dir="target/ftpserver"/>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+         </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-ftp</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- For unit tests only -->
+        <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-ftp</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-file</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ftpserver</groupId>
+            <artifactId>ftpserver-core</artifactId>
+            <version>${testFtpServerVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ftpserver</groupId>
+            <artifactId>ftplet-api</artifactId>
+            <version>${testFtpServerVersion}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

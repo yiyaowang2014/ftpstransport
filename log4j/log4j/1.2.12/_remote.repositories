@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:25:47 CDT 2016
+log4j-1.2.12.jar>central=
+log4j-1.2.12.pom>central=
+log4j-1.2.12.jar>mule-plugin=

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mulesoft.muleesb</groupId>
+        <artifactId>muleesb</artifactId>
+        <version>3.8.0</version>
+    </parent>
+    <groupId>com.mulesoft.muleesb.modules</groupId>
+    <artifactId>mule-modules</artifactId>
+    <packaging>pom</packaging>
+    <name>Mule Modules</name>
+    <description>Modules which extend the Mule Core but do not qualify as Transports</description>
+
+    <modules>
+        <module>all-modules</module>
+        <module>boot</module>
+        <module>kryo-serializer</module>
+        <module>bti</module>
+        <module>cache</module>
+        <module>cluster</module>
+
+        <!--batch depends on cluster so it has to go after it-->
+        <module>batch</module>
+
+        <module>http</module>
+        <module>dummy</module>
+        <module>tracking</module>
+        <module>multi-tx</module>
+        <module>xa-tx</module>
+        <module>patch-management</module>
+        <module>saml</module>
+        <module>spring-config</module>
+        <module>agent</module>
+        <module>plugin</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mulesoft.muleesb</groupId>
+            <artifactId>mule-core-ee</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Unit tests -->
+        <dependency>
+            <groupId>com.mulesoft.muleesb</groupId>
+            <artifactId>mule-core-ee</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+            <version>${xalanVersion}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <configuration>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>com.mulesoft.muleesb</groupId>
+                            <artifactId>mule-core-ee</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

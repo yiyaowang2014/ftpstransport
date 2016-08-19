@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Connector Testing Framework Parent</name>
+    <description>
+        Connector Testing Framework to engineer Mule functional tests.
+    </description>
+    <url>https://github.com/mulesoft/connector-testing-framework</url>
+    <inceptionYear>2014</inceptionYear>
+    <licenses>
+        <license>
+            <name>MuleSoft License Agreement</name>
+        </license>
+    </licenses>
+    <organization>
+        <name>MuleSoft, Inc.</name>
+        <url>http://www.mulesoft.com</url>
+    </organization>
+    <groupId>org.mule.tools.devkit</groupId>
+    <artifactId>connector-testing-framework-parent</artifactId>
+    <version>1.0.2</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>functional-test-framework</module>
+        <module>serialisers</module>
+        <module>serializer-engine</module>
+    </modules>
+
+    <properties>
+        <category>Community</category>
+        <jdk.version.source>1.6</jdk.version.source>
+        <jdk.version.target>1.6</jdk.version.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <junit.version>4.10</junit.version>
+        <commons-io.version>2.4</commons-io.version>
+        <maven-shade-plugin.version>2.3</maven-shade-plugin.version>
+        <mule.test.functional.version>3.7.0</mule.test.functional.version>
+        <jna.version>4.0.0</jna.version>
+        <apidoc-model.version>3.8.0</apidoc-model.version>
+        <xstream.version>1.4.7</xstream.version>
+        <guava.version>18.0</guava.version>
+        <docker-client.version>3.0.0</docker-client.version>
+        <cloudhub-client.version>1.7.1-HYDRA</cloudhub-client.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <maven-artifact.version>3.1.1</maven-artifact.version>
+        <jersey-client.version>1.18.1</jersey-client.version>
+        <cglib.version>3.1</cglib.version>
+        <maven-invoker.version>2.2</maven-invoker.version>
+        <log4j.version>1.2.17</log4j.version>
+        <intellij-annotations.version>12.0</intellij-annotations.version>
+        <jsonassert.version>1.2.3</jsonassert.version>
+        <cxf-api.version>2.7.15</cxf-api.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>it</id>
+            <modules>
+                <module>it-connectors</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <repositories>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Releases Repository</name>
+            <url>http://repository.mulesoft.org/releases/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>mulesoft-snapshots</id>
+            <name>MuleSoft Snapshots Repository</name>
+            <url>http://repository.mulesoft.org/snapshots/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+
+    <distributionManagement>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Repository</name>
+            <url>http://repository-master.mulesoft.org/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>mulesoft-snapshots</id>
+            <name>MuleSoft Snapshot Repository</name>
+            <url>http://repository-master.mulesoft.org/snapshots/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:git@github.com:mulesoft-labs/connector-testing-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:mulesoft-labs/connector-testing-framework.git</developerConnection>
+        <url>https://github.com/mulesoft-labs/connector-testing-framework</url>
+        <tag>connector-testing-framework-parent-1.0.2</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.11</version>
+                <configuration>
+                    <header>LICENSE_HEADER.txt</header>
+                    <excludes>
+                        <exclude>target/**</exclude>
+                        <exclude>.gitignore</exclude>
+                        <exclude>**/*.txt</exclude>
+                        <exclude>**/*.ftl</exclude>
+                        <exclude>**/*.ftl</exclude>
+                        <exclude>**/assets/**</exclude>
+                        <exclude>**/*.xsd</exclude>
+                        <exclude>**/*.properties</exclude>
+                        <exclude>**/*.xml</exclude>
+                        <exclude>**/archetype-resources/**</exclude>
+                        <exclude>**/src/main/java/package.html</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${jdk.version.source}</source>
+                    <target>${jdk.version.target}</target>
+                    <encoding>ISO-8859-1</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <configuration>
+                    <useDefaultManifestFile>false</useDefaultManifestFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <configuration>
+                    <!-- custom shade configuration -->
+                    <artifactSet>
+                        <includes>
+                            <include>com.thoughtworks.xstream:xstream</include>
+                        </includes>
+                    </artifactSet>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.thoughtworks.xstream</pattern>
+                            <shadedPattern>com.thoughtworks.xstream.shade147</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

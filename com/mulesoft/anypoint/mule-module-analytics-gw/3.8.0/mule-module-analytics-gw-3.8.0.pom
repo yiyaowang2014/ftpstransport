@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mulesoft.anypoint</groupId>
+        <artifactId>api-gateway-extensions</artifactId>
+        <version>3.8.0</version>
+    </parent>
+    <artifactId>mule-module-analytics-gw</artifactId>
+    <packaging>jar</packaging>
+    <name>API Gateway Analytics Collector</name>
+
+    <properties>
+        <licensePath>../../LICENSE_HEADER.txt</licensePath>
+        <guice.version>3.0</guice.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>gateway-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>mule-module-endpoint-aliases-gw</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>api-gateway-client</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup</groupId>
+            <artifactId>tape</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mulesoft.anypoint</groupId>
+            <artifactId>mule-module-test-utils-gw</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <classifier>indy</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

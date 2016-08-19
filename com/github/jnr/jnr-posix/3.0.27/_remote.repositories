@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 22:13:40 CDT 2016
+jnr-posix-3.0.27.pom>=
+jnr-posix-3.0.27.jar>=

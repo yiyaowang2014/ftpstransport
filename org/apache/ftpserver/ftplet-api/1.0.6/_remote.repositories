@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 22:41:39 CDT 2016
+ftplet-api-1.0.6.jar>=
+ftplet-api-1.0.6.pom>mule-codehaus=
+ftplet-api-1.0.6.pom>mule=
+ftplet-api-1.0.6.jar>mule-codehaus=

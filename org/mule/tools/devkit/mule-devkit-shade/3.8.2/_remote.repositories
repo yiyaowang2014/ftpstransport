@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 21:54:02 CDT 2016
+mule-devkit-shade-3.8.2.jar>mulesoft-plugin-releases=
+mule-devkit-shade-3.8.2.jar>=
+mule-devkit-shade-3.8.2.jar>mulesoft-releases=
+mule-devkit-shade-3.8.2.pom>mulesoft-plugin-releases=
+mule-devkit-shade-3.8.2.pom>mulesoft-releases=

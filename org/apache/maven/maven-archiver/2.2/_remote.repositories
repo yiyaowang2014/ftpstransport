@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:24:43 CDT 2016
+maven-archiver-2.2.jar>mule-plugin=
+maven-archiver-2.2.jar>central=
+maven-archiver-2.2.pom>mule-plugin=
+maven-archiver-2.2.pom>central=

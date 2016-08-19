@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 22:13:25 CDT 2016
+mule-core-3.8.0-tests.jar>=
+mule-core-3.8.0.pom>=
+mule-core-3.8.0.jar>central=
+mule-core-3.8.0.pom>central=

@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:25:33 CDT 2016
+mule-transport-file-3.8.0.pom>=
+mule-transport-file-3.8.0-tests.jar>central=
+mule-transport-file-3.8.0-tests.jar>mule=
+mule-transport-file-3.8.0.jar>=

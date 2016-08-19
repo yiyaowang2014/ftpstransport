@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 22:43:39 CDT 2016
+stax-api-1.0.1.pom>mule-plugin=
+stax-api-1.0.1.jar>=
+stax-api-1.0.1.pom>mule-codehaus=
+stax-api-1.0.1.jar>mule-codehaus=

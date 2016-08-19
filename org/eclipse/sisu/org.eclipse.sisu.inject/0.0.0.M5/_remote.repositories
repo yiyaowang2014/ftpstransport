@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:24:42 CDT 2016
+org.eclipse.sisu.inject-0.0.0.M5.jar>mule-plugin=
+org.eclipse.sisu.inject-0.0.0.M5.pom>mule-plugin=
+org.eclipse.sisu.inject-0.0.0.M5.jar>central=
+org.eclipse.sisu.inject-0.0.0.M5.pom>central=

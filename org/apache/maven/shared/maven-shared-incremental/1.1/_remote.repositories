@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 18 23:25:47 CDT 2016
+maven-shared-incremental-1.1.jar>mule-plugin=
+maven-shared-incremental-1.1.jar>central=
+maven-shared-incremental-1.1.pom>central=
+maven-shared-incremental-1.1.pom>mule-plugin=
